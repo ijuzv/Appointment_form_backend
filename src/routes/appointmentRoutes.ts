@@ -6,13 +6,13 @@ import {
     updateAppointment,
     deleteAppointment
 } from '../controllers/appointmentController';
-import { validateAppointment } from '../middlewares/validateAppointment';
-import Form from '../models/Appointment';
 
 const router = express.Router();
 
-router.route('/createappointment').post(createAppointment)
-router.route('/appointmenthistory').get(getAppointment);
-router.route('/appointment/:id').get(getAppointmentbyid).put(validateAppointment, updateAppointment).delete(deleteAppointment);
+router.post('/createappointment', createAppointment);
+router.get('/appointmenthistory', getAppointment);
+router.get('/appointment/:id', getAppointmentbyid);
+router.put('/appointment/:id', updateAppointment);
+router.delete('/appointment/:id', deleteAppointment);
 
 export default router;

@@ -16,6 +16,6 @@ router.get('/health', (req: Request, res: Response) => {
 });
 
 router.route('/').post(validateUser, createUser).get(getUsers);
-router.route('/:id').get(getUserById).put(validateUser, updateUser).delete(deleteUser);
+router.route('/:id').get(getUserById).patch(validateUser, updateUser).delete(deleteUser);
 
 export default router;
